@@ -45,8 +45,8 @@ public class Bus {
     public void transferPassengers(Bus otherBus, String[] passengerNames) {
         int otherBusSize = otherBus.passengers.size();
         for (int j = passengers.size() - 1; j >= 0; j--) {
-            Passenger p = passengers.get(j);
             for (int i = 0; i < passengerNames.length; i++) {
+                Passenger p = passengers.get(j);
                 if (p.name.equals(passengerNames[i])) {
                     otherBus.passengers.add(otherBusSize, p);
                     passengers.remove(j);
@@ -55,17 +55,4 @@ public class Bus {
             }
         }
     }
-    /*
-    * public void transferPassengers(Bus otherBus, String[] passengerNames) {
-        int otherBusSize = otherBus.passengers.size();
-        for (int i = 0; i < passengerNames.length; i++) {
-            for (int j = passengers.size() - 1; j >= 0; j--) {
-                Passenger p = passengers.get(j);
-                if (p.name.equals(passengerNames[i])) {
-                    otherBus.passengers.add(otherBusSize, p);
-                    passengers.remove(j);
-                }
-            }
-        }
-    }*/
 }
