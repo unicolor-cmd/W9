@@ -3,7 +3,7 @@ package h2;
 import java.util.ArrayList;
 
 public class Bus {
-    ArrayList<Passenger> passengers;
+    public ArrayList<Passenger> passengers;
     public Bus() {
         passengers = new ArrayList<Passenger>();
     }
@@ -32,7 +32,7 @@ public class Bus {
         nextStop(boarding);
     }
     public ArrayList<Passenger> findPassengersWithoutTickets() {
-        ArrayList<Passenger> passengersWithoutTickets = ArrayList<Passenger>();
+        ArrayList<Passenger> passengersWithoutTickets = new ArrayList<Passenger>();
         for (int i = passengers.size() - 1; i >= 0; i--) {
             Passenger p = passengers.get(i);
             if (!p.ticket) {
