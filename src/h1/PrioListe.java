@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class PrioListe {
     ArrayList<Patient> myList = new ArrayList<Patient>();
     public void addPatient(Patient p) {
+        if (p == null) return;
         int i = 0;
         while (myList.size() > i && myList.get(i).prio <= p.prio) {
             i++;
@@ -13,6 +14,7 @@ public class PrioListe {
         myList.add(i, p);
     }
     public Patient getNextPatient() {
+        if (myList.size() == 0) return null;
         return myList.remove(0);
     }
     public int getPosition(Patient p) {
